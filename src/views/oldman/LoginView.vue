@@ -1,3 +1,4 @@
+<!-- 登录 -->
 <template>
     <div class="body">
         <div class="center">
@@ -21,8 +22,8 @@
                 <!-- 登录按钮 -->
                 <div class="login_bottom">
                     <input type="button" @click="login" class="login-button" value="登录" style="height: 38px; width: 150px; border-radius: 15px;
-                     border-color: white; padding-left: 10px; font-size: 23px; font-family: 宋体;
-                     background-color: rgb(153,153,255);  box-shadow: 2px 2px 5px 2px gray;">
+                    border-color: white; padding-left: 10px; font-size: 23px; font-family: 宋体;
+                    background-color: rgb(153,153,255);  box-shadow: 2px 2px 5px 2px gray;">
                 </div>
             </form>
             <!-- 写一个跳转注册的文字，使用超链接来接受 -->

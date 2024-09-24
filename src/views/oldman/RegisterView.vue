@@ -1,3 +1,4 @@
+<!-- 注册 -->
 <template>
     <div class="body">
         <div class="center">
@@ -22,8 +23,8 @@
                 <!-- 注册按钮 -->
                 <div class="register_bottom">
                     <input type="button" value="注册" @click="register" style="height: 38px; width: 150px; border-radius: 15px;
-                     border-color: white; padding-left: 10px; font-size: 23px; font-family: 宋体;
-                     background-color: rgb(153,153,255);  box-shadow: 2px 2px 5px 2px gray;">
+                    border-color: white; padding-left: 10px; font-size: 23px; font-family: 宋体;
+                    background-color: rgb(153,153,255);  box-shadow: 2px 2px 5px 2px gray;">
                 </div>
             </form>
             <div class="loginView">
@@ -76,7 +77,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .loginView {
     position: relative;
     left: 20px;
