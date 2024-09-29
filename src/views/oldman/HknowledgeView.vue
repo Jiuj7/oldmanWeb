@@ -18,7 +18,6 @@
                     <img src="@/assets/images/user.png" alt="">
                 </div>
             </router-link>
-
         </div>
         <div class="bg">
             <div>

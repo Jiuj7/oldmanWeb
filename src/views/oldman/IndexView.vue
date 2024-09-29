@@ -11,7 +11,7 @@
                 <div class="nav-link"><router-link :to="{ path: '/oldman/index' }" class="nav-link-inner">首页</router-link></div>
                 <div class="nav-link"><router-link :to="{ path: '/oldman/Hknowledge' }" class="nav-link-inner">健康知识库</router-link></div>
                 <div class="nav-link"><router-link :to="{ path: '/oldman/Memoirs' }" class="nav-link-inner">回忆录</router-link></div>
-                <div class="nav-link"><router-link :to="{ path: '/oldman/Healthysport' }" class="nav-link-inner">康复运动与指导</router-link></div>
+                <div class="nav-link"><router-link :to="{ path: '/oldman/Healthyguide' }" class="nav-link-inner">健康指导</router-link></div>
             </div>
             <div class="actions">
                 <div class="login">
@@ -118,8 +118,6 @@
     border-bottom: 4px solid rgb(161, 82, 236);
     color: rgb(161, 82, 236);
 }
-
-
 .actions {
     display: flex;
     color: #8a5b8e;
