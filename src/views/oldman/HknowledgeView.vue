@@ -12,17 +12,17 @@
                 <img src="@/assets/images/logo.png" alt="" style="width: 4vw; max-width: 100px;">
             </div>
             <div class="header-title">老年健康服务平台</div>
-            <router-link :to="{ path: '/oldman/userCenter' }">
-                <div class="header-user">
-                    <div>个人中心</div>
-                    <img src="@/assets/images/user.png" alt="">
-                </div>
-            </router-link>
+            <div class="header-user" @click="userCenter">
+                <img src="@/assets/images/user.png" alt="">
+            </div>
         </div>
         <div class="bg">
-            <div>
-                <img src="@/assets/images/Hknowledgebg.jpg" alt="">
-
+            <img :src="images[idx]" alt="">
+            <div @click="prev" class="carousel-control prev"><img src="@/assets/images/next.svg" alt=""></div>
+            <div @click="next" class="carousel-control next"><img src="@/assets/images/next.svg" alt=""></div>
+            <div class="image-list">
+                <div :style="{ 'background-color': idx == image - 1 ? '#fff' : '#525050' }"
+                    v-for="(image, index) in images.length" :key="index"></div>
             </div>
         </div>
         <div class="content">
@@ -69,7 +69,8 @@
                             <div class="Cinner-bottom">
                                 <div class="Cinner-title">运动指导</div>
                                 <div class="Cinner-introduce">
-                                    锻炼身体，对任何年龄段的人都很重要。但是，当你渐渐变老的时候，是否坚持锻炼可能意味着是独立生活还是不得不受别人照顾的区别。 老了，锻炼的方式和年轻人的就不再相同了。健康专家认为，对于 65 岁以上的老年人，要使用不同的锻炼方式，还要遵守特别的注意事项。
+                                    锻炼身体，对任何年龄段的人都很重要。但是，当你渐渐变老的时候，是否坚持锻炼可能意味着是独立生活还是不得不受别人照顾的区别。
+                                    老了，锻炼的方式和年轻人的就不再相同了。健康专家认为，对于 65 岁以上的老年人，要使用不同的锻炼方式，还要遵守特别的注意事项。
                                 </div>
                             </div>
                         </div>
@@ -114,7 +115,8 @@
                             <div class="Cinner-bottom">
                                 <div class="Cinner-title">作息指南</div>
                                 <div class="Cinner-introduce">
-                                    很多老年人刚退休，一时调整不过来作息时间，也有些老年人一直就没有良好的作息生活，不好的生活方式可能导致身体机能失衡，各种“不舒服”。 因此，我们需要寻找一种科学合理的作息时间表来改善生活品质，维护身体健康。所以，我为老年朋友们制作一份作息时间表，可以按照此时间表进行培养规律的生活习惯，执行过程中逐渐按自己的喜好，调整活动内容，但要保持规律。
+                                    很多老年人刚退休，一时调整不过来作息时间，也有些老年人一直就没有良好的作息生活，不好的生活方式可能导致身体机能失衡，各种“不舒服”。
+                                    因此，我们需要寻找一种科学合理的作息时间表来改善生活品质，维护身体健康。所以，我为老年朋友们制作一份作息时间表，可以按照此时间表进行培养规律的生活习惯，执行过程中逐渐按自己的喜好，调整活动内容，但要保持规律。
                                 </div>
                             </div>
                         </div>
@@ -123,9 +125,59 @@
             </ul>
         </div>
     </div>
-</template>  
-    
+</template>
+
 <script>
+/* eslint-disable */
+export default {
+    data() {
+        return {
+            images: [
+                require('@/assets/images/Hknowledgebg.jpg'),
+                require('@/assets/images/HknowRest2.jpg'),
+                require('@/assets/images/HknowRest1.jpg')
+            ],
+            idx: -1,
+            timer: null,
+        }
+    },
+    methods: {
+        showImages() {
+            this.idx = (this.idx + 1) % this.images.length;
+            this.timer = setTimeout(() => {
+                this.showImages();
+            }, 4500)
+        },
+        // stopImageRotation() {
+        //     if (this.timer) {
+        //         clearTimeout(this.timer);
+        //         this.timer = null;  // 清除后重置为 null  
+        //     }
+        // },
+        next() {
+            this.idx =
+                (this.idx + 1) % this.images.length;
+        },
+        prev() {
+            this.idx =
+                (this.idx - 1 + this.images.length) % this.images.length;
+        },
+        userCenter() {
+            if (localStorage.getItem('token')) {
+                // 如果 token 存在，则假设用户已经登录，跳转到用户中心
+                this.$router.replace({ path: '/Oldman/userCenter' });
+            } else {
+                // 如果没有 token，跳转到登录页面
+                alert('请先登录');
+                this.$router.replace({ path: '/oldman/Login' });
+            }
+        }
+    },
+    mounted() {
+        this.showImages()
+    }
+}
+
 </script>
 
 <style scoped>
@@ -194,17 +246,49 @@
     width: 100vw;
     height: 70vh;
     margin-top: 9vh;
+    position: relative;
 }
 
-.bg>div {
-    width: 80vw;
+.bg>img {
+    width: 100vw;
     height: 70vh;
-    margin: 0 auto;
 }
 
-.bg>div>img {
-    width: 80vw;
-    height: 70vh;
+.bg .image-list {
+    position: absolute;
+    left: 45vw;
+    bottom: 1vw;
+    display: flex;
+    flex: row;
+}
+
+.bg .image-list div {
+    width: 3vw;
+    height: 0.5vh;
+    margin: 0.5vw;
+    opacity: 0.7;
+}
+.bg .prev{
+    width: 3vw;
+    position: absolute;
+    left: 3vw;
+    bottom: 15vw;
+    cursor: pointer;
+}
+.bg .prev img{
+    width: 3vw;
+}
+
+.bg .next{
+    width: 3vw;
+    position: absolute;
+    left: 94vw;
+    bottom: 15vw;
+    cursor: pointer;
+}
+.bg .next img{
+    width: 3vw;
+    transform: scaleX(-1);
 }
 
 .content {
@@ -222,26 +306,38 @@
 }
 
 .content ul li {
-    width: 25vw;
+    width: 24.5vw;
     height: 50vh;
     float: left;
-    margin: 0 0 2vw 1.2vw;
-    border: 1px solid #cfcbcb;
+    margin: 0 0 2vw 1.5vw;
+    border: 0.1vw solid #cfcbcb;
+    transition: all 500ms;
+    overflow: hidden;
+}
+
+.content ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 30px #ccc;
 }
 
 .content ul li:nth-child(1),
 .content ul li:nth-child(4) {
-    margin-left: 1.2vw;
-}
-
-.content ul li .content-inner .Cinner-bottom {
-    padding: 1vw;
+    margin-left: 1.5vw;
 }
 
 .content ul li .content-inner .Cinner-Images,
 .content ul li .content-inner .Cinner-Images img {
-    width: 25vw;
+    width: 24.5vw;
     height: 35vh;
+    transition: all 500ms;
+}
+
+.content ul li .content-inner .Cinner-Images img:hover {
+    transform: scale(1.1);
+}
+
+.content ul li .content-inner .Cinner-bottom {
+    padding:1vw;
 }
 
 .content ul li .content-inner .Cinner-title {
@@ -261,5 +357,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     height: 3vw;
+}
+
+.content ul li .content-inner .Cinner-introduce:hover {
+    color: rgb(147, 172, 241);
 }
 </style>

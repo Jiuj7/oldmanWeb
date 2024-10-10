@@ -19,6 +19,8 @@
                 </div>
             </router-link>
         </div>
+
+
         <div class="content">
             <div class="content-title">
                 健康指导
@@ -75,7 +77,28 @@
 </template>
 
 <script>
-
+// const DiseaseOptions = [];
+// export default {
+//     data() {
+//         return {
+//             checkAll: false,
+//             checkedDiseases: [],
+//             Diseases: DiseaseOptions,
+//             isIndeterminate: true
+//         };
+//     }, 
+//     methods: {
+//         handleCheckAllChange(val) {
+//             this.checkedCities = val ? DiseaseOptions : [];
+//             this.isIndeterminate = false;
+//         },
+//         handleCheckedCitiesChange(value) {
+//             let checkedCount = value.length;
+//             this.checkAll = checkedCount === this.cities.length;
+//             this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+//         }
+//     }
+// };
 </script>
 
 <style scoped>
@@ -154,9 +177,11 @@
     margin-left: 1.2vw;
     font-size: 1.5vw;
 }
-ul li{
+
+ul li {
     width: 40vw;
 }
+
 .content-inner {
     width: 40vw;
     height: 20vh;
@@ -173,10 +198,12 @@ ul li{
 .content-inner .Cinner-text {
     margin-left: 16vw;
 }
+
 .content-inner .Cinner-title {
     color: skyblue;
     font-size: 1.5vw;
 }
+
 .content-inner .Cinner-introduce {
     background-color: #fff;
     color: #666565;
