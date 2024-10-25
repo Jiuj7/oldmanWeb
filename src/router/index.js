@@ -82,6 +82,16 @@ const routes = [
     path:'/oldman/HguideHypertension',
     name:'HguideHypertension',
     component:()=>import('../views/oldman/HguideHypertensionView.vue')
+  },
+  {
+    path:'/oldman/HguideHyperglycemia',
+    name:'HguideHyperglycemia',
+    component:()=>import('../views/oldman/HguideHyperglycemiaView.vue')
+  },
+  {
+    path:'/oldman/HguideHyperlipidemia',
+    name:'HguideHyperlipidemia',
+    component:()=>import('../views/oldman/HguideHyperlipidemiaView.vue')
   }
 ]
 

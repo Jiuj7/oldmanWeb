@@ -1,7 +1,7 @@
 <!-- 健康知识库 -->
 <template>
     <div class="body">
-        <div class="header">
+        <!-- <div class="header">
             <router-link :to="{ path: '/oldman/index' }">
                 <div class="return">
                     <img src="@/assets/images/return.png" alt="">
@@ -15,8 +15,48 @@
             <div class="header-user" @click="userCenter">
                 <img src="@/assets/images/user.png" alt="">
             </div>
+        </div> -->
+        <div class="HeaderFather">
+            <div class="header">
+                <div id="logo">
+                    <img src="@/assets/images/logo.png" alt="" style="width: 70px; max-width: 100px;">
+                </div>
+                <div class="logoContent">老年健康服务平台</div>
+                <div class="nav-links">
+                    <div class="ai"><router-link :to="{ path: '/Oldman/Aianswer' }" class="ai-inner"><i>AI</i>
+                            答疑解惑</router-link></div>
+                    <div class="nav-link"><router-link :to="{ path: '/oldman/index' }"
+                            class="nav-link-inner">首页</router-link>
+                    </div>
+                    <div class="nav-link"><router-link :to="{ path: '/oldman/Hknowledge' }"
+                            class="nav-link-inner">健康知识库</router-link></div>
+                    <div class="nav-link"><router-link :to="{ path: '/oldman/Healthyguide' }"
+                            class="nav-link-inner">健康指导</router-link></div>
+                </div>
+                <div class="actions">
+                    <div class="login" v-if="!isLoggedIn">
+                        <router-link :to="{ path: '/oldman/Login' }" class="login-inner">
+                            登录
+                        </router-link>
+                    </div>
+                    <div class="register" v-if="!isLoggedIn">
+                        <router-link :to="{ path: '/oldman/Register' }" class="register-inner">
+                            免费注册
+                        </router-link>
+                    </div>
+                    <div v-if="isLoggedIn"><img :src="userImg" @click="toggleDropdown" alt=""
+                            style="width: 2px; position: relative; left: 10px; cursor: pointer;"></div>
+                    <!-- 下拉菜单 -->
+                    <div class="dropdown-menu" v-if="showDropdown">
+                        <ul>
+                            <li @click="userCenter" class="dropdown-item">个人中心</li>
+                            <li @click="logout" class="dropdown-item">退出登录</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bg">
+        <div class="banner">
             <img :src="images[idx]" alt="">
             <div @click="prev" class="carousel-control prev"><img src="@/assets/images/next.svg" alt=""></div>
             <div @click="next" class="carousel-control next"><img src="@/assets/images/next.svg" alt=""></div>
@@ -148,12 +188,6 @@ export default {
                 this.showImages();
             }, 4500)
         },
-        // stopImageRotation() {
-        //     if (this.timer) {
-        //         clearTimeout(this.timer);
-        //         this.timer = null;  // 清除后重置为 null  
-        //     }
-        // },
         next() {
             this.idx =
                 (this.idx + 1) % this.images.length;
@@ -182,14 +216,13 @@ export default {
 
 <style scoped>
 .body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     overflow-x: hidden;
     background-color: #d8e5f7;
 }
 
 /* 导航栏 */
-.header {
+/* .header {
     width: 100vw;
     height: 9vh;
     background: #fff;
@@ -240,77 +273,253 @@ export default {
 
 .header-user img {
     width: 2vw;
+} */
+
+.HeaderFather {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #aba8a8;
+    background-color: #fff;
 }
 
-.bg {
-    width: 100vw;
-    height: 70vh;
-    margin-top: 9vh;
+.header {
+    width: 1500px;
+    height: 74px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #716565; */
+    background-color: #fff;
+    /* position: fixed; */
+    z-index: 1000;
+    margin: 0 auto;
+}
+
+.dropdown-menu {
     position: relative;
+    top: 9px;
+    left: 6.6px;
+    width: 5px;
+    height: 10px;
+    background-color: #d6e7fb;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 5px;
+    padding-top: 1px;
+    text-align: center;
+
+    z-index: 1;
 }
 
-.bg>img {
-    width: 100vw;
-    height: 70vh;
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.bg .image-list {
+.dropdown-item {
+    /* padding: 12px 16px; */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* 添加平滑过渡效果 */
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    /* 鼠标悬停时的背景色 */
+}
+
+.logoContent {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#logo {
+    margin-left: 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.header .nav-links .ai {
+    width: 104px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #798bf0;
+    float: left;
+    color: #fffffffb;
+    cursor: pointer;
+}
+
+.header .nav-links .ai .ai-inner {
+    display: block;
+    /* 使router-link充满整个父div */
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
+.header .nav-links .ai:hover {
+    background-image: linear-gradient(to bottom right, rgb(104, 106, 237), rgb(97, 82, 236), rgb(52, 58, 232));
+}
+
+.header .nav-links .nav-link {
+    width: 130px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: #8a5b8e;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.nav-link-inner,
+.ai-inner,
+.login-inner,
+.register-inner,
+.understand-inner {
+    display: block;
+    /* 使router-link充满整个父div */
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
+.header .nav-links .nav-link:hover {
+    border-bottom: 6px solid rgb(161, 82, 236);
+    color: rgb(161, 82, 236);
+}
+
+.header .nav-links .nav-link:nth-child(3) {
+    border-bottom: 6px solid rgb(161, 82, 236);
+    color: rgb(161, 82, 236);
+}
+
+.actions {
+    display: flex;
+    color: #8a5b8e;
+    align-items: center;
+    margin-left: 240px;
+}
+
+.header .actions .login {
+    width: 68px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    border: 1px solid #868282;
+    margin-left: 10px;
+    border-radius: 28px;
+    cursor: pointer;
+}
+
+.header .actions .login:hover {
+    border: 1px solid #da44eb;
+    color: #da44eb;
+}
+
+.header .actions .register {
+    width: 102px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    background-color: #e334ed;
+    margin-left: 16px;
+    border-radius: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header .actions .register:hover {
+    background-image: linear-gradient(to bottom right, rgb(195, 54, 220), rgb(207, 55, 207), rgb(197, 31, 174));
+}
+
+
+/* 轮播图 */
+
+
+.banner {
+    width: 1400px;
+    height: 580px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.banner>img {
+    width: 1400px;
+    height: 580px;
+}
+
+.banner .image-list {
     position: absolute;
-    left: 45vw;
-    bottom: 1vw;
+    left: 600px;
+    bottom: 10px;
     display: flex;
     flex: row;
 }
 
-.bg .image-list div {
-    width: 3vw;
-    height: 0.5vh;
-    margin: 0.5vw;
+.banner .image-list div {
+    width: 50px;
+    height: 4px;
+    margin: 10px;
     opacity: 0.7;
 }
-.bg .prev{
-    width: 3vw;
+
+.banner .prev {
+    width: 50px;
     position: absolute;
-    left: 3vw;
-    bottom: 15vw;
+    left: 20px;
+    bottom: 250px;
     cursor: pointer;
-}
-.bg .prev img{
-    width: 3vw;
 }
 
-.bg .next{
-    width: 3vw;
+.banner .prev img {
+    width: 50px;
+}
+
+.banner .next {
+    width: 50px;
     position: absolute;
-    left: 94vw;
-    bottom: 15vw;
+    left: 1330px;
+    bottom: 250px;
     cursor: pointer;
 }
-.bg .next img{
-    width: 3vw;
+
+.banner .next img {
+    width: 50px;
     transform: scaleX(-1);
 }
 
+/* 内容区域 */
 .content {
-    width: 80vw;
-    height: 120vh;
-    margin: 5vh 0 0 10vw;
+    width: 1400px;
+    height: 1000px;
+    margin: 30px auto;
     background-color: #fff;
 }
 
 .content .content-title {
-    height: 10vh;
-    line-height: 10vh;
-    margin-left: 1.2vw;
-    font-size: 1.5vw;
+    height: 80px;
+    line-height: 80px;
+    margin-left: 26px;
+    font-size: 26px;
+    font-weight: 500;
 }
 
 .content ul li {
-    width: 24.5vw;
-    height: 50vh;
+    width: 428px;
+    height: 410px;
     float: left;
-    margin: 0 0 2vw 1.5vw;
-    border: 0.1vw solid #cfcbcb;
+    margin: 0 0 28px 26px;
+    border: 1.5px solid #cfcbcb;
     transition: all 500ms;
     overflow: hidden;
 }
@@ -320,15 +529,10 @@ export default {
     box-shadow: 10px 10px 30px #ccc;
 }
 
-.content ul li:nth-child(1),
-.content ul li:nth-child(4) {
-    margin-left: 1.5vw;
-}
-
 .content ul li .content-inner .Cinner-Images,
 .content ul li .content-inner .Cinner-Images img {
-    width: 24.5vw;
-    height: 35vh;
+    width: 428px;
+    height: 290px;
     transition: all 500ms;
 }
 
@@ -337,29 +541,106 @@ export default {
 }
 
 .content ul li .content-inner .Cinner-bottom {
-    padding:1vw;
+    padding: 15px;
 }
 
 .content ul li .content-inner .Cinner-title {
     background-color: #fff;
     color: skyblue;
-    font-size: 1.5vw;
+    font-size: 25px;
 }
 
 .content ul li .content-inner .Cinner-introduce {
     background-color: #fff;
     color: #666565;
-    font-size: 1vw;
+    font-size: 17px;
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 3vw;
+    height: 50px;
 }
 
 .content ul li .content-inner .Cinner-introduce:hover {
     color: rgb(147, 172, 241);
+}
+
+/* 媒体查询 */
+@media screen and (max-width: 950px) {
+
+    /* 导航栏变化 */
+    .header {
+        width: 950px;
+        height: 74px;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        /* border-bottom: 1px solid #716565; */
+        background-color: #fff;
+        /* position: fixed; */
+        z-index: 1000;
+        margin: 0 auto;
+    }
+    #logo,
+    .logoContent {
+        display: none;
+    }
+    
+
+    /*轮播图变化 */
+    .banner {
+        width: 950px;
+        height: 393px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .banner>img {
+        width: 950px;
+        height: 393px;
+    }
+
+    .banner .image-list {
+        position: absolute;
+        left: 365px;
+        bottom: 5px;
+        display: flex;
+        flex: row;
+    }
+
+    .banner .prev {
+        width: 50px;
+        position: absolute;
+        left: 10px;
+        bottom: 150px;
+        cursor: pointer;
+    }
+    .banner .next {
+        width: 50px;
+        position: absolute;
+        left: 870px;
+        bottom: 150px;
+        cursor: pointer;
+    }
+
+    /* 内容区域变化 */
+    .content {
+        width: 950px;
+        margin: 30px auto;
+        height: 1400px;
+        background-color: #fff;
+    }
+
+    .content .content-title {
+        height: 80px;
+        line-height: 80px;
+        margin-left: 26px;
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+
 }
 </style>
