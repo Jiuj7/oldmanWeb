@@ -1,25 +1,6 @@
 <!-- 健康指导 -->
 <template>
     <div class="body">
-        <!-- <div class="header">
-            <router-link :to="{ path: '/oldman/index' }">
-                <div class="return">
-                    <img src="@/assets/images/return.png" alt="">
-                    <div title="首页">返回</div>
-                </div>
-            </router-link>
-            <div class="header-logo">
-                <img src="@/assets/images/logo.png" alt="" style="width: 4vw; max-width: 100px;">
-            </div>
-            <div class="header-title">老年健康服务平台</div>
-            <router-link :to="{ path: '/oldman/userCenter' }">
-                <div class="header-user">
-                    <div>个人中心</div>
-                    <img src="@/assets/images/user.png" alt="">
-                </div>
-            </router-link>
-        </div> -->
-
         <div class="HeaderFather">
             <div class="header">
                 <div id="logo">
@@ -65,7 +46,7 @@
             <div class="content-title">
                 健康指导
             </div>
-            <ul>
+            <ul class="ul1">
                 <li>
                     <router-link :to="{ path: '/oldman/HguideHypertension' }">
                         <div class="content-inner">
@@ -76,21 +57,6 @@
                                     即血压升高，是血液在流动时对血管壁造成的压力值持续高于正常的现象。根据《中国高血压临床实践指南》，成人高血压的诊断标准是收缩压≥130mmHg和/或舒张压≥80mmHg。高血压的发病原因多为遗传因素和不健康的生活方式，如高盐饮食、过量饮酒、长期精神紧张和体力活动不足等。高血压在5类人群中易发：有家族史的人群；情绪易激动的人群；摄入盐量偏高的人群；嗜酒人群；工作或生活压力大的人群。
                                     高血压的典型症状包括头痛、疲倦或不安、心律失常、心悸耳鸣等。然而，许多高血压患者可能在没有任何症状的情况下已出现其他并发症，如脑卒中、视物模糊、意识丧失、失忆等，所以高血压被称为“无声的杀手”。
                                     对于高血压患者，改善生活方式和药物治疗是最常用的治疗方式。药物治疗的基本原则包括优先使用长效降压药物，控制24小时血压，并适时根据需要调整药物与剂量。如果高血压患者的血压长期得不到控制，可能会导致更严重的并发症，甚至可能导致卒中、脑梗死等致命的结果。
-                                </div>
-                            </div>
-                        </div>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="{ path: '/oldman/HguideHyperlipidemia' }">
-                        <div class="content-inner">
-                            <img src="@/assets/images/HknowHealthyEat6.jpg" alt="">
-                            <div class="Cinner-text">
-                                <div class="Cinner-title">高血脂</div>
-                                <div class="Cinner-introduce">
-                                    高脂血症，也称高血脂或血脂异常，通常指血浆中甘油三酯和（或）总胆固醇升高，低密度脂蛋白胆固醇升高和高密度脂蛋白胆固醇降低。该症的发生可见于不同年龄和性别的人群，尤其常见于50~69岁人群，有明显的遗传倾向。疾病的发病原因包括基因突变、多种环境因素，如不良饮食习惯、体力活动不足、肥胖等，以及其他疾病如糖尿病、肾病综合征、肝脏疾病等。
-                                    高脂血症的典型症状包括黄色瘤、早发性角膜环、眼底改变，但在大多数情况下，症状并不明显，通常在因其他疾病就诊或常规体检时被发现。高脂血症不具有传染性。
-                                    高脂血症的治疗主要包括生活方式干预和药物治疗。生活方式的改变包含改善饮食习惯、增加体力活动等。药物治疗主要有他汀类调脂药、贝特类调脂药、烟酸和高纯度鱼油等。如果患者同时患有重度肥胖，也可以考虑进行减重手术。积极的治疗有利于疾病的预后，但需要注意的是，高脂血症存在引发冠心病、脑血管病等并发疾病的风险。
                                 </div>
                             </div>
                         </div>
@@ -112,35 +78,126 @@
                         </div>
                     </router-link>
                 </li>
+                <li>
+                    <router-link :to="{ path: '/oldman/HguideHyperlipidemia' }">
+                        <div class="content-inner">
+                            <img src="@/assets/images/HknowHealthyEat6.jpg" alt="">
+                            <div class="Cinner-text">
+                                <div class="Cinner-title">慢性支气管炎</div>
+                                <div class="Cinner-introduce">
+                                    慢性支气管炎多发生在中年人年龄组，病程缓慢，多数隐潜起病，初起在寒冷季节发病。出现咳嗽及咳痰的症状，尤清晨最明显，痰呈白色粘液泡沫状，粘稠不易咯出，在感染或受寒后则症状迅速加剧，痰量增多，粘度增大或呈黄色脓性。有时咳痰中可带血，随着病情发展，终年均有咳嗽、咳痰，而以秋冬为剧。
+                                    本病早期多无特殊体征，大多数在肺底部可听到湿性和干性罗音，有时咳嗽或咳痰后消失，长期发作者可导致肺气肿。
+                                    <br>发病原因
+                                    <br>
+                                    正常情况下，呼吸道具有完善的防御功能，对吸入的空气可发挥过滤加温和湿化的作用。气道黏膜表面的纤毛运动和咳嗽反射等借此可清除气道中的异物和病原微生物。下呼吸道还存在分泌型IgA，有抗病原微生物的作用，因此下呼吸道一般能保持净化状态。全身或呼吸道局部防御和免疫功能减退（尤其是老年人）则极易罹患慢性支气管炎且反复发作而不愈。
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
+            </ul>
+            <div class="content-title">
+                健康运动指导
+            </div>
+            <ul class="ul2">
+                <li>
+                    <router-link :to="{ path: '/oldman/HknowHabits' }">
+                        <div class="content-inner">
+                            <div class="Cinner-Images">
+                                <img src="@/assets/images/HknowHabits1.jpg" alt="">
+                            </div>
+                            <div class="Cinner-bottom">
+                                <div class="Cinner-title">平衡训练</div>
+                                <div class="Cinner-introduce">
+                                    老年人随着年龄的增长，身体的机能都在慢慢退化，免疫力逐渐降低，各种各样的疾病也随之而来。很多生活中的小细节，一不注意就会给老年人的身体健康带来很大的危害。掌握一些重要的健康知识，可以让老年人的生活更有保障。
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ path: '/oldman/HknowHealthyEat' }">
+                        <div class="content-inner">
+                            <div class="Cinner-Images">
+                                <img src="@/assets/images/HknowHealthyEat6.jpg" alt="">
+                            </div>
+                            <div class="Cinner-bottom">
+                                <div class="Cinner-title">柔韧训练</div>
+                                <div class="Cinner-introduce">
+                                    膳食营养是保证老年人健康的基础。与年轻时相比，老年人身体机能有不少的变化，如：合成代谢降低；肌肉量减少，骨骼的矿物质减少、消化酶、消化液分泌减少导致消化功能减退。
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ path: '/oldman/HknowSportInstruction' }">
+                        <div class="content-inner">
+                            <div class="Cinner-Images">
+                                <img src="@/assets/images/HknowSportInstruction2.jpg" alt="">
+                            </div>
+                            <div class="Cinner-bottom">
+                                <div class="Cinner-title">心肺训练</div>
+                                <div class="Cinner-introduce">
+                                    锻炼身体，对任何年龄段的人都很重要。但是，当你渐渐变老的时候，是否坚持锻炼可能意味着是独立生活还是不得不受别人照顾的区别。
+                                    老了，锻炼的方式和年轻人的就不再相同了。健康专家认为，对于 65 岁以上的老年人，要使用不同的锻炼方式，还要遵守特别的注意事项。
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ path: '/oldman/HguideStrength' }">
+                        <div class="content-inner">
+                            <div class="Cinner-Images">
+                                <img src="@/assets/images/HknowMentalHealthy1.jpg" alt="">
+                            </div>
+                            <div class="Cinner-bottom">
+                                <div class="Cinner-title">力量训练</div>
+                                <div class="Cinner-introduce">
+                                    老年人心理健康很大程度上影响着老年人晚年生活质量，是老年健康的一项重要议题。老年人应该保持积极的社交互动，与家人、朋友和社区保持联系，参加社交活动，以减少孤独感和抑郁情绪。
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ path: '/oldman/HknowDiseasePrevention' }">
+                        <div class="content-inner">
+                            <div class="Cinner-Images">
+                                <img src="@/assets/images/HknowDiseasePrevention1.jpg" alt="">
+                            </div>
+                            <div class="Cinner-bottom">
+                                <div class="Cinner-title">耐力训练</div>
+                                <div class="Cinner-introduce">
+                                    老年人是慢性病患病率和发病率最高的人群。患有慢性疾病的老年人，随着年龄增长，免疫机能逐渐衰减，罹患感染性疾病的风险将显著增加。感染这些常见感染性疾病，也可能会影响慢性病的控制。那么，哪些情况下更易“中招”感染性疾病？如何预防？
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ path: '/oldman/HknowRest' }">
+                        <div class="content-inner">
+                            <div class="Cinner-Images">
+                                <img src="@/assets/images/HknowRest3.jpg" alt="">
+                            </div>
+                            <div class="Cinner-bottom">
+                                <div class="Cinner-title">速度训练</div>
+                                <div class="Cinner-introduce">
+                                    很多老年人刚退休，一时调整不过来作息时间，也有些老年人一直就没有良好的作息生活，不好的生活方式可能导致身体机能失衡，各种“不舒服”。
+                                    因此，我们需要寻找一种科学合理的作息时间表来改善生活品质，维护身体健康。所以，我为老年朋友们制作一份作息时间表，可以按照此时间表进行培养规律的生活习惯，执行过程中逐渐按自己的喜好，调整活动内容，但要保持规律。
+                                </div>
+                            </div>
+                        </div>
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
-// const DiseaseOptions = [];
-// export default {
-//     data() {
-//         return {
-//             checkAll: false,
-//             checkedDiseases: [],
-//             Diseases: DiseaseOptions,
-//             isIndeterminate: true
-//         };
-//     },
-//     methods: {
-//         handleCheckAllChange(val) {
-//             this.checkedCities = val ? DiseaseOptions : [];
-//             this.isIndeterminate = false;
-//         },
-//         handleCheckedCitiesChange(value) {
-//             let checkedCount = value.length;
-//             this.checkAll = checkedCount === this.cities.length;
-//             this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
-//         }
-//     }
-// };
-
 export default {
     data() {
         return {
@@ -185,58 +242,6 @@ export default {
 }
 
 /* 导航栏 */
-/* .header {
-    width: 100vw;
-    height: 9vh;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 1000;
-}
-
-.header .return {
-    width: 5vw;
-    display: flex;
-    align-items: center;
-    margin-left: 1vw;
-    font-size: 1vw;
-    color: #666565;
-}
-
-.header .return:hover {
-    color: rgb(161, 82, 236);
-
-}
-
-.header .return img {
-    width: 1vw;
-}
-
-.header-logo {
-    margin-left: 1vw;
-}
-
-.header-title {
-    font-size: 1.5vw;
-    font-weight: bold;
-}
-
-.header-user {
-    margin-left: 62vw;
-    font-size: 1.2vw;
-    display: flex;
-    align-items: center;
-    color: #000;
-}
-
-.header-user>div {
-    padding-right: 0.5vw;
-}
-
-.header-user img {
-    width: 2vw;
-} */
 .HeaderFather {
     width: 100%;
     overflow: hidden;
@@ -420,11 +425,11 @@ export default {
     font-size: 26px;
 }
 
-ul {
+.ul1 {
     padding-bottom: 20px;
 }
 
-ul li {
+.ul1 li {
     width: 1400px;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -435,47 +440,113 @@ ul li {
 
 
 
-ul li:hover {
+.ul1 li:hover {
     background-color: #f5f5f5;
 }
 
-.content-inner {
+.ul1 li .content-inner {
     width: 1300px;
     height: 220px;
     padding: 18px;
 }
 
-.content-inner img {
+.ul1 li .content-inner img {
     width: 390px;
     height: 220px;
     border-radius: 10px;
     float: left;
 }
 
-.content-inner .Cinner-text {
+.ul1 li .content-inner .Cinner-text {
     width: 900px;
     margin: 0 420px;
 }
 
-.content-inner .Cinner-title {
+.ul1 li .content-inner .Cinner-title {
     color: skyblue;
     font-size: 26px;
 }
 
-.content-inner .Cinner-introduce {
+.ul1 li .content-inner .Cinner-introduce {
     color: #666565;
     font-size: 17px;
     line-height: 24px;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 16px;
 }
-.content-inner .Cinner-introduce:hover{
+
+.ul1 li .content-inner .Cinner-introduce:hover {
     color: rgb(147, 172, 241);
 }
+
+
+.ul2 {
+    width: 1500px;
+    height: 700px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.content .ul2 li {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    float: left;
+    margin: 0 25px 50px 60px;
+    border: 1.5px solid #cfcbcb;
+    transition: all 500ms;
+    overflow: hidden;
+}
+
+.content .ul2 li:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 30px #ccc;
+}
+
+.content .ul2 li .content-inner .Cinner-Images,
+.content .ul2 li .content-inner .Cinner-Images img {
+    width: 400px;
+    height: 200px;
+    transition: all 500ms;
+}
+
+.content .ul2 li .content-inner .Cinner-Images img:hover {
+    transform: scale(1.1);
+}
+
+.content .ul2 li .content-inner .Cinner-bottom {
+    padding: 15px;
+}
+
+.content .ul2 li .content-inner .Cinner-title {
+    background-color: #fff;
+    color: skyblue;
+    font-size: 25px;
+}
+
+.content .ul2 li .content-inner .Cinner-introduce {
+    background-color: #fff;
+    color: #666565;
+    font-size: 17px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+}
+
+.content .ul2 li .content-inner .Cinner-introduce:hover {
+    color: rgb(147, 172, 241);
+}
+
 
 /* 媒体查询 */
 @media screen and (max-width: 950px) {
@@ -515,7 +586,7 @@ ul li:hover {
         font-size: 26px;
     }
 
-    ul li {
+    .ul1 li {
         width: 900px;
         border: 1px solid #ccc;
         border-radius: 20px;
@@ -523,26 +594,25 @@ ul li:hover {
         margin: 20px auto;
     }
 
-    ul li:hover {
+    .ul1 li:hover {
         background-color: #f5f5f5;
     }
 
-    .content-inner {
+    .ul1 li .content-inner {
         width: 800px;
         height: 170px;
         padding: 18px;
     }
 
-    .content-inner img {
+    .ul1 li .content-inner img {
         width: 280px;
         height: 170px;
         border-radius: 10px;
         float: left;
     }
 
-    .content-inner .Cinner-text {
+    .ul1 li .content-inner .Cinner-text {
         width: 560px;
         margin: 0 300px;
     }
-}
-</style>
+}</style>
