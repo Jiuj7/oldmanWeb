@@ -29,7 +29,7 @@
                 <router-link :to="{ path: '/oldman/HguideHypertension' }">
                     <div class="content-inner">
                         <div class="Cinner-Images">
-                            <img src="@/assets/images/HknowHabits1.jpg" alt="">
+                            <img src="@/assets/images/HguideHypertension.png" alt="">
                         </div>
                         <div class="Cinner-text">
                             <div class="Cinner-title">高血压</div>
@@ -39,10 +39,10 @@
                         </div>
                     </div>
                 </router-link>
-                <router-link :to="{ path: '/oldman/HguideHypertension' }">
+                <router-link :to="{ path: '/oldman/HguideHyperglycemia' }">
                     <div class="content-inner">
                         <div class="Cinner-Images">
-                            <img src="@/assets/images/HknowHabits1.jpg" alt="">
+                            <img src="@/assets/images/HguideHyperglycemia.png" alt="">
                         </div>
                         <div class="Cinner-text">
                             <div class="Cinner-title">高血糖</div>

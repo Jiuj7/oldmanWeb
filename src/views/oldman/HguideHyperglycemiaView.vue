@@ -26,12 +26,11 @@
                     一般患者可出现可有血糖升高、口渴、多饮、多尿、乏力、体重减轻等症状。长期高血糖还会导致全身微动脉血管病变，可导致相应器官损害，发生糖尿病肾病、糖尿病视网膜病变、糖尿病神经病变、糖尿病足等。高血糖没有传染性，也没有潜伏期。
                     <br>高血糖在治疗时需要针对病因治疗，一般生理性高血糖不需要特殊治疗。病理性的高血糖需要针对病因进行相应的治疗，而通常在临床上多会采取药物治疗，控制血糖正常。对于因嗜铬细胞瘤、胰高血糖素瘤等疾病引起的高血糖需要手术治疗，切出肿瘤，达到治疗的目的。
                 </div>
-
                 <div class="Ctext-middle">相关推荐</div>
                 <router-link :to="{ path: '/oldman/HguideHypertension' }">
                     <div class="content-inner">
                         <div class="Cinner-Images">
-                            <img src="@/assets/images/HknowHabits1.jpg" alt="">
+                            <img src="@/assets/images/HguideHypertension.png" alt="">
                         </div>
                         <div class="Cinner-text">
                             <div class="Cinner-title">高血压</div>
@@ -43,10 +42,10 @@
                         </div>
                     </div>
                 </router-link>
-                <router-link :to="{ path: '/oldman/HguideHyperlipidemia' }">
+                <router-link :to="{ path: '/oldman/HguideBronchitis' }">
                     <div class="content-inner">
                         <div class="Cinner-Images">
-                            <img src="@/assets/images/HknowHabits1.jpg" alt="">
+                            <img src="@/assets/images/HguideBronchitis.png" alt="">
                         </div>
                         <div class="Cinner-text">
                             <div class="Cinner-title">慢性支气管炎</div>

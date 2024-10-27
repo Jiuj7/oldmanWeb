@@ -50,7 +50,7 @@
                 <li>
                     <router-link :to="{ path: '/oldman/HguideHypertension' }">
                         <div class="content-inner">
-                            <img src="@/assets/images/HguideHyperlipidemia.png" alt="">
+                            <img src="@/assets/images/HguideHypertension.png" alt="">
                             <div class="Cinner-text">
                                 <div class="Cinner-title">高血压</div>
                                 <div class="Cinner-introduce">
@@ -79,9 +79,9 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/oldman/HguideHyperlipidemia' }">
+                    <router-link :to="{ path: '/oldman/HguideBronchitis' }">
                         <div class="content-inner">
-                            <img src="@/assets/images/HguideHyperlipidemia.png" alt="">
+                            <img src="@/assets/images/HguideBronchitis.png" alt="">
                             <div class="Cinner-text">
                                 <div class="Cinner-title">慢性支气管炎</div>
                                 <div class="Cinner-introduce">
