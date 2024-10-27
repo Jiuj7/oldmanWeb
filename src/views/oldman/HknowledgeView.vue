@@ -23,18 +23,18 @@
                 </div>
                 <div class="logoContent">老年健康服务平台</div>
                 <div class="nav-links">
-                    <div class="ai"><router-link :to="{ path: '/Oldman/Aianswer' }" class="ai-inner"><i>AI</i>
-                            答疑解惑</router-link></div>
+                    <div class="ai" @click="handleClick"><i>AI</i>
+                        答疑解惑</div>
                     <div class="nav-link"><router-link :to="{ path: '/oldman/index' }"
                             class="nav-link-inner">首页</router-link>
                     </div>
                     <div class="nav-link"><router-link :to="{ path: '/oldman/Hknowledge' }"
                             class="nav-link-inner">健康知识库</router-link></div>
-                    <div class="nav-link"><router-link :to="{ path: '/oldman/Healthyguide' }"
-                            class="nav-link-inner">健康指导</router-link></div>
+                    <div class="nav-link" @click="handleClick2">
+                        健康指导</div>
                 </div>
                 <div class="actions">
-                    <div class="login" v-if="!isLoggedIn">
+                    <!-- <div class="login" v-if="!isLoggedIn">
                         <router-link :to="{ path: '/oldman/Login' }" class="login-inner">
                             登录
                         </router-link>
@@ -45,14 +45,14 @@
                         </router-link>
                     </div>
                     <div v-if="isLoggedIn"><img :src="userImg" @click="toggleDropdown" alt=""
-                            style="width: 2px; position: relative; left: 10px; cursor: pointer;"></div>
+                            style="width: 2vw; position: relative; left: 10vw; cursor: pointer;"></div> -->
                     <!-- 下拉菜单 -->
-                    <div class="dropdown-menu" v-if="showDropdown">
-                        <ul>
-                            <li @click="userCenter" class="dropdown-item">个人中心</li>
-                            <li @click="logout" class="dropdown-item">退出登录</li>
+                    <!-- <div class="dropdown-menu" v-if="showDropdown"> -->
+                    <!-- <ul> -->
+                    <!-- <li @click="userCenter" class="dropdown-item">个人中心</li> -->
+                    <!-- <li @click="logout" class="dropdown-item">退出登录</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -179,9 +179,35 @@ export default {
             ],
             idx: -1,
             timer: null,
+            showDropdown: false, // 控制下拉框显示的状态
+            isLoggedIn: false,
         }
     },
     methods: {
+        handleClick() {
+            if (localStorage.getItem('token')) {
+                // 判断是否登录
+                this.$router.replace({ path: '/oldman/Aianswer' });
+            } else {
+                // 如果没有 token，跳转到登录页面
+                alert('请先登录');
+                this.$router.replace({ path: '/oldman/Login' });
+            }
+        },
+        handleClick2() {
+            if (localStorage.getItem('token')) {
+                // 判断是否登录
+                this.$router.replace({ path: '/oldman/Healthyguide' });
+            } else {
+                // 如果没有 token，跳转到登录页面
+                alert('请先登录');
+                this.$router.replace({ path: '/oldman/Login' });
+            }
+        },
+        logout() {
+            localStorage.clear();
+            this.$router.replace({ path: '/oldman/Login' });
+        },
         showImages() {
             this.idx = (this.idx + 1) % this.images.length;
             this.timer = setTimeout(() => {
@@ -205,10 +231,17 @@ export default {
                 alert('请先登录');
                 this.$router.replace({ path: '/oldman/Login' });
             }
+        },
+        checkLogin() {
+            if (localStorage.getItem('token')) {
+                this.isLoggedIn = true;
+                this.userImg = require('@/assets/images/user.png');
+            }
         }
     },
     mounted() {
-        this.showImages()
+        this.showImages(),
+            this.checkLogin();
     }
 }
 
@@ -297,18 +330,18 @@ export default {
 
 .dropdown-menu {
     position: relative;
-    top: 9px;
-    left: 6.6px;
-    width: 5px;
-    height: 10px;
-    background-color: #d6e7fb;
+    top: 5vh;
+    left: 6.6vw;
+    width: 5vw;
+    height: 5vh;
+    background-color: #2280eb;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    color: white;
+    color: rgb(184, 208, 255);
     font-size: 16px;
     font-weight: bold;
-    line-height: 5px;
-    padding-top: 1px;
+    line-height: 5vh;
+    /* padding-top: 0.5vh; */
     text-align: center;
 
     z-index: 1;
@@ -318,17 +351,19 @@ export default {
     list-style: none;
     padding: 0;
     margin: 0;
+    /* color: #868282; */
 }
 
 .dropdown-item {
     /* padding: 12px 16px; */
     cursor: pointer;
     transition: background-color 0.3s;
+    /* color: #868282; */
     /* 添加平滑过渡效果 */
 }
 
 .dropdown-item:hover {
-    background-color: #f1f1f1;
+    background-color: #8292ff;
     /* 鼠标悬停时的背景色 */
 }
 
@@ -583,11 +618,12 @@ export default {
         z-index: 1000;
         margin: 0 auto;
     }
+
     #logo,
     .logoContent {
         display: none;
     }
-    
+
 
     /*轮播图变化 */
     .banner {
@@ -617,6 +653,7 @@ export default {
         bottom: 150px;
         cursor: pointer;
     }
+
     .banner .next {
         width: 50px;
         position: absolute;

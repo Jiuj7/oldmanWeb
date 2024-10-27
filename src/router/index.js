@@ -89,9 +89,34 @@ const routes = [
     component:()=>import('../views/oldman/HguideHyperlipidemiaView.vue')
   },
   {
-    path:'/oldman/HguideStrength',
-    name:'HguideStrength',
-    component:()=>import('../views/oldman/HguideStrengthView.vue')
+    path:'/oldman/HguideSwim',
+    name:'HguideSwim',
+    component:()=>import('../views/oldman/HguideSwimView.vue')
+  },
+  {
+    path:'/oldman/HguideTaichi',
+    name:'HguideTaichi',
+    component:()=>import('../views/oldman/HguideTaichiView.vue')
+  },
+  {
+    path:'/oldman/HguideAerobics',
+    name:'HguideAerobics',
+    component:()=>import('../views/oldman/HguideAerobicsView.vue')
+  },
+  {
+    path:'/oldman/HguideJogging',
+    name:'HguideJogging',
+    component:()=>import('../views/oldman/HguideJoggingView.vue')
+  },
+  {
+    path:'/oldman/HguideBaduanjin',
+    name:'HguideBaduanjin',
+    component:()=>import('../views/oldman/HguideBaduanjinView.vue')
+  },
+  {
+    path:'/oldman/HguideSoftball',
+    name:'HguideSoftball',
+    component:()=>import('../views/oldman/HguideSoftballView.vue')
   }
 ]
 

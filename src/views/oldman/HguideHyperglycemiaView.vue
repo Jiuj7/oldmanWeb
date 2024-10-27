@@ -66,7 +66,7 @@
 
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .body {
     width: 100%;
     overflow: hidden;
@@ -235,5 +235,150 @@
         height: 260px;
     }
 
+} -->
+<!-- </style> -->
+<style scoped>
+.body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 导航栏 */
+.header {
+    width: 100vw;
+    height: 9vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header .return {
+    width: 5vw;
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+    font-size: 1vw;
+    color: #666565;
+}
+
+.header .return:hover {
+    color: rgb(161, 82, 236);
+
+}
+
+.header .return img {
+    width: 1vw;
+}
+
+.header-logo {
+    margin-left: 1vw;
+}
+
+.header-title {
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+
+.content {
+    width: 100vw;
+    height: 91vh;
+    margin-top: 9vh;
+    overflow-y: hidden;
+}
+
+/* 左边视频 */
+.content .content-video {
+    margin-left: 2vw;
+    float: left;
+}
+
+.content .video {
+    width: 66vw;
+    height: 91vh;
+}
+
+/* 右边文本 */
+.content .content-text {
+    height: 91vh;
+    background-color: #fff;
+    padding: 0 1vw 0 1vw;
+    margin-left: 69vw;
+    margin-right: 2vw;
+    border-radius: 1vh;
+}
+
+.content-text .Ctext-header {
+    height: 4vh;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1vh;
+    font-weight: bold;
+}
+
+.content-text .Ctext-title {
+    font-size: 24px;
+    color: skyblue;
+}
+
+.content-text .Ctext-content {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2vh;
+    overflow-y: auto;
+    height: 40vh;
+}
+.content-text .Ctext-content::-webkit-scrollbar {
+    display: none;
+}
+.content-text .Ctext-middle {
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+.content-inner {
+    height: 16vh;
+    margin-top: 1vw;
+    border-radius: 0.5vw;
+}
+
+.content-inner:hover {
+    background-color: #e7e5e5;
+}
+
+.content-inner .Cinner-Images img {
+    width: 12vw;
+    height: 14vh;
+    float: left;
+    border-radius: 1vh;
+    margin: 1vh 0 1vh 0.5vw;
+}
+
+.content-inner .Cinner-text {
+    margin: 0 0.5vw 0 13vw;
+}
+
+.content-inner .Cinner-title {
+    color: skyblue;
+    font-size: 1.2vw;
+    padding-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.content-inner .Cinner-introduce {
+    color: #666565;
+    font-size: 17px;
+    line-height: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 8px;
+}
+
+.content-inner .Cinner-introduce:hover {
+    color: rgb(147, 172, 241);
 }
 </style>

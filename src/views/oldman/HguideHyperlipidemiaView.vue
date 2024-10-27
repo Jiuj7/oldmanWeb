@@ -1,4 +1,4 @@
-<!-- 高血脂 -->
+<!-- 慢性支气管炎 -->
 <template>
     <div class="body">
         <div class="header">
@@ -153,6 +153,11 @@
 .content-text .Ctext-content {
     border-bottom: 1px solid #ccc;
     padding-bottom: 2vh;
+    overflow-y: auto;
+    height: 40vh;
+}
+.content-text .Ctext-content::-webkit-scrollbar {
+    display: none;
 }
 
 .content-text .Ctext-middle {
