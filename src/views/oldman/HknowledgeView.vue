@@ -1,21 +1,6 @@
 <!-- 健康知识库 -->
 <template>
     <div class="body">
-        <!-- <div class="header">
-            <router-link :to="{ path: '/oldman/index' }">
-                <div class="return">
-                    <img src="@/assets/images/return.png" alt="">
-                    <div title="首页">返回</div>
-                </div>
-            </router-link>
-            <div class="header-logo">
-                <img src="@/assets/images/logo.png" alt="" style="width: 4vw; max-width: 100px;">
-            </div>
-            <div class="header-title">老年健康服务平台</div>
-            <div class="header-user" @click="userCenter">
-                <img src="@/assets/images/user.png" alt="">
-            </div>
-        </div> -->
         <div class="HeaderFather">
             <div class="header">
                 <div id="logo">
@@ -251,68 +236,17 @@ export default {
 .body {
     width: 100%;
     overflow-x: hidden;
-    background-color: #d8e5f7;
+    background: linear-gradient(to bottom right, #afccff, #cbbdff);
 }
 
 /* 导航栏 */
-/* .header {
-    width: 100vw;
-    height: 9vh;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 1000;
-}
-
-.header .return {
-    width: 5vw;
-    display: flex;
-    align-items: center;
-    margin-left: 1vw;
-    font-size: 1vw;
-    color: #666565;
-}
-
-.header .return:hover {
-    color: rgb(161, 82, 236);
-
-}
-
-.header .return img {
-    width: 1vw;
-}
-
-.header-logo {
-    margin-left: 1vw;
-}
-
-.header-title {
-    font-size: 1.5vw;
-    font-weight: bold;
-}
-
-.header-user {
-    margin-left: 62vw;
-    font-size: 1.2vw;
-    display: flex;
-    align-items: center;
-    color: #000;
-}
-
-.header-user>div {
-    padding-right: 0.5vw;
-}
-
-.header-user img {
-    width: 2vw;
-} */
-
 .HeaderFather {
     width: 100%;
     overflow: hidden;
     border-bottom: 1px solid #aba8a8;
-    background-color: #fff;
+    position: fixed;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
 }
 
 .header {
@@ -321,10 +255,6 @@ export default {
     font-size: 17px;
     display: flex;
     align-items: center;
-    /* border-bottom: 1px solid #716565; */
-    background-color: #fff;
-    /* position: fixed; */
-    z-index: 1000;
     margin: 0 auto;
 }
 
@@ -539,6 +469,7 @@ export default {
     height: 1000px;
     margin: 30px auto;
     background-color: #fff;
+    border-radius: 5px;
 }
 
 .content .content-title {
