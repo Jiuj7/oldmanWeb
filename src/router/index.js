@@ -145,6 +145,12 @@ const routes = [
     path:'/oldman/HguideSoftball',
     name:'HguideSoftball',
     component:()=>import('../views/oldman/HguideSoftballView.vue')
+  },
+  {
+    
+    path:'/oldman/oldmanTakeOut',
+    name:'oldmanTakeOut',
+    component:()=>import('../views/oldman/oldmanTakeOut.vue')
   }
 ]
 

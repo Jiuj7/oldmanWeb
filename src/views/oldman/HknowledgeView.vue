@@ -17,6 +17,9 @@
                             class="nav-link-inner">健康知识库</router-link></div>
                     <div class="nav-link" @click="handleClick2">
                         健康指导</div>
+                    <div class="nav-link">
+                        智慧养老
+                    </div>
                 </div>
                 <div class="actions">
                     <!-- <div class="login" v-if="!isLoggedIn">
@@ -309,7 +312,7 @@ export default {
 .nav-links {
     display: flex;
     align-items: center;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .header .nav-links .ai {

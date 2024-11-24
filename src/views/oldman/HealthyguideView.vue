@@ -17,6 +17,8 @@
                             class="nav-link-inner">健康知识库</router-link></div>
                     <div class="nav-link"><router-link :to="{ path: '/oldman/Healthyguide' }"
                             class="nav-link-inner">健康指导</router-link></div>
+                    <div class="nav-link"><router-link :to="{ path: '/oldman/oldmanTakeOut' }"
+                            class="nav-link-inner">智慧养老</router-link></div>
                 </div>
                 <div class="actions">
                     <div class="login" v-if="!isLoggedIn">
@@ -309,7 +311,7 @@ export default {
 .nav-links {
     display: flex;
     align-items: center;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .header .nav-links .ai {
@@ -372,7 +374,7 @@ export default {
     display: flex;
     color: #8a5b8e;
     align-items: center;
-    margin-left: 240px;
+    margin-left: 140px;
 }
 
 .header .actions .login {
